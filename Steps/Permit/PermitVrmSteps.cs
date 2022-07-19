@@ -19,7 +19,7 @@ namespace SpecFlowSelenium.Steps.Permit
             _scenarioContext = scenarioContext;
         }
 
-        [When(@"user looksup '(.*)'")]
+        [When(@"user look up '(.*)'")]
         public void Whenuserlooksupvrm(string vrm)
         {
             _scenarioContext.TryGetValue("vehiclePage", out _vehiclePage);
