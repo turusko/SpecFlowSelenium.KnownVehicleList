@@ -1,3 +1,4 @@
+using SpecFlowSelenium.Drivers;
 using SpecFlowSelenium.PageObjects.Permits;
 using TechTalk.SpecFlow;
 
@@ -9,11 +10,9 @@ namespace SpecFlowSelenium.Hooks.PermitHooks
         [BeforeFeature("VrmLookup")]
         public static void VrmFeatureSetup(FeatureContext featureContext)
         {
-            var driver = new Drivers.Driver();
-            var vehiclePage = driver.NavigateToPermits()
-                .ClickNext();
 
-            featureContext.Add("webDriver", driver);
+            featureContext.TryGetValue("landingPage", out LandingPage landingPage);
+            var vehiclePage = landingPage.ClickNext();
             featureContext.Add("vehiclePage", vehiclePage);
 
         }
