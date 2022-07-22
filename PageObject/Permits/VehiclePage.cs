@@ -22,9 +22,10 @@ namespace SpecFlowSelenium.PageObjects.Permits
 
 
         }
-        public void ConfirmVehicle()
+        public ChargePage ConfirmVehicle()
         {
             this.WaitForProgressButton().Click();
+            return new ChargePage(_webDriver);
 
         }
 

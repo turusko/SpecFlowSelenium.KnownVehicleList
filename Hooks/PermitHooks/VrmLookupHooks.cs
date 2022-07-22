@@ -35,12 +35,6 @@ namespace SpecFlowSelenium.Hooks.PermitHooks
 
         }
 
-        [AfterFeature("VrmLookup")]
-        public static void VrmFeatureTeardown(FeatureContext featureContext)
-        {
-            featureContext.TryGetValue("webDriver", out Drivers.Driver webDriver);
-            webDriver.Close();
 
-        }
     }
 }
