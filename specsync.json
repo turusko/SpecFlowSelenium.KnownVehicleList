@@ -1,0 +1,10 @@
+﻿{
+  "$schema": "https://schemas.specsolutions.eu/specsync4azuredevops-config-latest.json",
+  "compatibilityVersion": "3.3",
+  //
+  // See configuration options and samples at https://speclink.me/specsync-config.
+  //
+  "remote": {
+    "projectUrl": "https://dev.azure.com/CPES/Conduent"
+  }
+}
