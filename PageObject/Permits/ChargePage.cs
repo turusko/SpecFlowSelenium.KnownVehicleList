@@ -27,7 +27,7 @@ namespace SpecFlowSelenium.PageObjects.Permits
                         output += match;
                     }
 
-                    return int.Parse(output)/100;
+                    return int.Parse(output) / 100;
                 }
             }
 
@@ -40,7 +40,7 @@ namespace SpecFlowSelenium.PageObjects.Permits
             return new VehiclePage(_webDriver);
         }
 
-        internal bool IsChargeNamePresent(string chargeName)
+        public bool IsChargeNamePresent(string chargeName)
         {
             foreach (WebElement paragraph in _webDriver.FindElements(By.TagName("p")))
             {
@@ -52,6 +52,12 @@ namespace SpecFlowSelenium.PageObjects.Permits
 
             return false;
 
+        }
+
+        public SchedulePage ClickContinue()
+        {
+            _webDriver.FindElement(By.XPath("//button[text()='Select your travel dates']")).Click();
+            return new SchedulePage(_webDriver);
         }
     }
 }

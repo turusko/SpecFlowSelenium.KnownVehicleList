@@ -1,4 +1,5 @@
 using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using OpenQA.Selenium;
 
@@ -31,7 +32,7 @@ namespace SpecFlowSelenium.PageObjects.Permits
 
             foreach (var item in dateList.Skip(1))
             {
-                if (item.Text.Contains(date.ToString("ddd MMM yy")))
+                if (item.Text.Contains(date.ToString("ddd dd MMM yy")))
                 {
                     return true;
                 }
@@ -39,6 +40,11 @@ namespace SpecFlowSelenium.PageObjects.Permits
 
             return false;
 
+        }
+
+        public ReadOnlyCollection<IWebElement> GetSelectedDates()
+        {
+            return _webDriver.FindElements(By.CssSelector(".k-state-selected"));
         }
 
     }
